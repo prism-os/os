@@ -1,0 +1,9 @@
+{
+  "name": "string",
+  "abilities": {
+    "widget": "boolean",
+    "notification": "boolean"
+  },
+  "version": "string",
+  "class_name": "string"
+}

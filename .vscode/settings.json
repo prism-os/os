@@ -1,0 +1,7 @@
+{
+  "C_Cpp.intelliSenseEngineFallback": "Disabled",
+  "C_Cpp.errorSquiggles": "Enabled",
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "python.pythonPath": "venv/bin/python"
+}

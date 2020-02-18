@@ -1,0 +1,9 @@
+{
+  "name": "Notifications Demo",
+  "abilities": {
+    "widget": true,
+    "notification": true
+  },
+  "version": "1.0",
+  "class_name": "sidevesh__notifications_demo"
+}

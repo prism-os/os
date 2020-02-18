@@ -1,0 +1,9 @@
+{
+  "name": "@@NAME@@",
+  "abilities": {
+    "widget": false,
+    "notification": true
+  },
+  "version": "1.0",
+  "class_name": "@@USERNAME@@__@@CLASSNAME@@"
+}

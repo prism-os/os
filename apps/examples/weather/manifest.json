@@ -1,0 +1,9 @@
+{
+  "name": "Weather",
+  "abilities": {
+    "widget": true,
+    "notification": false
+  },
+  "version": "1.0",
+  "class_name": "sidevesh__weather"
+}

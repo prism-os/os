@@ -1,0 +1,13 @@
+altgraph==0.16.1
+argparse-prompt==0.0.4
+astroid==2.2.5
+isort==4.3.21
+lazy-object-proxy==1.4.2
+mccabe==0.6.1
+Pillow==6.1.0
+PyInstaller==3.5
+pylint==2.3.1
+pyserial==3.4
+six==1.12.0
+typed-ast==1.4.0
+wrapt==1.11.2

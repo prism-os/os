@@ -1,0 +1,23 @@
+/platforms
+/framework/main.a
+/framework/main.debug.a
+/cli/build
+/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+venv
+*.spec
+
+/outputs/*
+!/outputs/.keep
+
+/bin/*
+!/bin/.keep
+
+/dist/*
+!/dist/.keep
+
+.DS_Store
+.vscode/ipch

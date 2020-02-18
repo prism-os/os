@@ -1,0 +1,61 @@
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+name: Upload Release Asset
+
+jobs:
+  build:
+    name: Release CLI
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        name: [macos-latest-amd64, ubuntu-latest-amd64]
+        include:
+          - name: macos-latest-amd64
+            os: macos-latest
+            asset_name: prismtool-macos-amd64.zip
+          - name: ubuntu-latest-amd64
+            os: ubuntu-latest
+            asset_name: prismtool-linux-amd64.zip
+    steps:
+      - name: Setup python
+        uses: actions/setup-python@v1
+        with:
+          python-version: '3.6'
+          architecture: 'x64'
+      - name: Install Pillow build dependencies for MacOS
+        if: matrix.os == 'macos-latest'
+        run: |
+          brew install zlib libtiff libjpeg webp little-cms2 freetype harfbuzz fribidi
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Install pip and setuptools
+        run: |
+          pip3 install --upgrade pip setuptools
+      - name: Install dependencies for MacOS
+        if: matrix.os == 'macos-latest'
+        run: |
+          export LDFLAGS="-L/usr/local/opt/zlib/lib"
+          export CPPFLAGS="-I/usr/local/opt/zlib/include"
+          export CPATH=`xcrun --show-sdk-path`/usr/include
+          pip3 install -r requirements.txt
+      - name: Install dependencies for Ubuntu
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          pip3 install -r requirements.txt
+      - name: Setup platforms
+        run: |
+          ./setup_platforms.sh
+      - name: Prepare cli distributable
+        run: |
+          ./package_cli.sh
+      - name: Upload dists to release
+        uses: svenstaro/upload-release-action@v1-release
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./dist/cli.zip
+          asset_name: ${{ matrix.asset_name }}
+          tag: ${{ github.ref }}
