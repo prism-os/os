@@ -28,3 +28,6 @@ Prism allows developers to build apps for embedded platforms in a super easy way
 * [Setup Prism CLI](https://prismos.dev/docs/setup-prism-cli)
 * [Create your first Prism app](https://prismos.dev/docs/create-first-app)
 * [***API docs***](https://prismos.dev/docs/app-structure)
+
+**Get in touch**  
+Feel free to drop me a mail at swapnil@prismos.dev to get in touch.
