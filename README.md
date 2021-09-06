@@ -1,6 +1,6 @@
 # Prism OS
 
-<img src="https://github.com/prism-os/prism-os.github.io/raw/master/apple-touch-icon.png" align="right"
+<img src="https://raw.githubusercontent.com/prism-os/prism-os.github.io/gh-pages/apple-touch-icon.png" align="right"
      title="Prism logo" width="178" height="178">
 
 Prism allows developers to build apps for embedded platforms in a super easy way and makes installing apps on embedded devices as simple as clicking ***Install*** on the Prism Store!  
