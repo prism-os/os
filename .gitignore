@@ -20,4 +20,4 @@ venv
 !/dist/.keep
 
 .DS_Store
-.vscode/ipch
+.vscode
